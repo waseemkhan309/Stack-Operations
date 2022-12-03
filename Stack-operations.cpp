@@ -1,4 +1,4 @@
-// Online C++ compiler to run C++ program online
+// DSA Stack operations using array  in C++
 #include <iostream>
 using namespace std;
 class stack{
@@ -6,27 +6,27 @@ class stack{
   int top;
   int arr[5];
   public:
-  stack(){
+  stack(){                    //Constructor
       top=-1;
       for(int i=0;i<5;i++){
           arr[i]=0;
       }
   }
-  bool isEmpty(){
+  bool isEmpty(){               //IsEmpty
       if(top==-1){
           return true;
       }else{
           return false;
       }
   }
- bool isFull(){
+ bool isFull(){               //isFull
      if(top==4){
          return true;
      }else{
          return false;
      }
  }
- void push(int val){
+ void push(int val){            //Push operation
      if(isFull()){
          cout<<"Stack is Overflow"<<endl;
      }else{
@@ -35,7 +35,7 @@ class stack{
      }
  }
  
- void pop(){
+ void pop(){                   //pop operations
      if(isEmpty()){
          cout<<"Stack is UnderFlow"<<endl;
      }else{
@@ -46,7 +46,7 @@ class stack{
          top--;   
      }
  }
- void peek(){
+ void peek(){                   //peek operation
      if(isEmpty()){
          cout<<"stack underFlow"<<endl;
      }else{
@@ -56,7 +56,7 @@ class stack{
          cout<<"arr["<<posi-1<<"]= "<<arr[posi-1]<<endl;
      }
  }
- void change(){
+ void change(){             //Change operation
      if(isEmpty()){
                   cout<<"stack underFlow"<<endl;
      }else{
@@ -67,7 +67,7 @@ class stack{
          arr[posi-1]=val;
      }
  }
- void display(){
+ void display(){             //Display
      cout<<"Elements of Stack "<<endl;
      for(int i=0;i<5;i++){
          cout<<arr[i]<<endl;
@@ -78,18 +78,18 @@ class stack{
 };
 int main() {
     stack stk;
-    stk.isEmpty();
-    stk.isFull();
-    stk.push(2);
+    stk.isEmpty(); //isEmpty
+    stk.isFull();   //isFull
+    stk.push(2);    //Push
     stk.push(3);
     stk.push(4);
     stk.push(5);
-    stk.display();
+    stk.display();   //Display
+    stk.pop();        //Pop
     stk.pop();
-    stk.pop();
     stk.display();
-    stk.peek();
-    stk.change();
+    stk.peek();   //peek
+    stk.change();  //Change
     stk.display();
     return 0;
 }
